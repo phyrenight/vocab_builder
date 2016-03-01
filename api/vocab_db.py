@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Foreignkey, Integer, String
-form sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchemy umport create_enigine
+from sqlalchemy import create_enigine
 
 Base = declarative_base()
 
