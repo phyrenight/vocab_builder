@@ -2,9 +2,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from vocab_db import Base, Dict
 
+engine = create_engine('sqlite:///Dictionary.db')
+Base.metadata.bind = engine
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
+
 # Add words
-
-
 word1 = Dict(word="colloquial", definition="characteristics of or appropriate to ordinary or familiar conversation rather than formal speech or writing; informal")
 session.add(word1)
 word2 = Dict(word="acquiesce", definition="to assent tacitly, submit or comply silently or without protest; agree; consent")

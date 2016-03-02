@@ -1,7 +1,7 @@
-from sqlalchemy import Column, Foreignkey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchemy import create_enigine
+from sqlalchemy import create_engine
 
 Base = declarative_base()
 
@@ -20,5 +20,5 @@ class Dict(Base):
                 'definition': self.definition,
                }
 
-engine = create_engine('sql:///Dictionary.db')
+engine = create_engine('sqlite:///Dictionary.db')
 Base.metadata.create_all(engine)
