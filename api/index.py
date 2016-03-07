@@ -3,7 +3,7 @@ import flask import session as login_session
 from flask import make_response, url_for, redirect, render_template
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
-from vocab_db import Dict, Base
+from vocab_db import Dict, Games, Base
 
 app = Flask(__name__)
 
@@ -19,9 +19,11 @@ def Home():
 
 @app.route('/games')
 def games():
+	games = session.query(games).all()
     return "Welcome to the games page!"
 
 @app.route('/games/hangman')
+def gameHangman():
     return "hangman"
 
 if __name__ == '__main__'

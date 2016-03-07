@@ -20,5 +20,17 @@ class Dict(Base):
                 'definition': self.definition,
                }
 
+class Games(Base):
+    __tablename__ == 'Games'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(100), nullable=True)
+
+    def serialize(self):
+        return {
+              'id': self.id,
+              'name': self.word,
+
+        }
+
 engine = create_engine('sqlite:///Dictionary.db')
 Base.metadata.create_all(engine)
