@@ -15,11 +15,14 @@ session = DBSession()
 
 @app.route('/')
 def Home():
-    retrun "Welcome home"
+    return "Welcome home"
 
 @app.route('/games')
 def games():
     return "Welcome to the games page!"
+
+@app.route('/games/hangman')
+    return "hangman"
 
 if __name__ == '__main__'
     app.debug = True
