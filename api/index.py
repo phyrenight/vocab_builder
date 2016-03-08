@@ -20,7 +20,7 @@ def Home():
 @app.route('/games')
 def games():
 	games = session.query(games).all()
-    return "Welcome to the games page!"
+    return render_template("games.html", games=games)
 
 @app.route('/games/hangman')
 def gameHangman():
